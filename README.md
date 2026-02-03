@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Age Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="_U4tKl_AVoxg_5NGFpOo5esz7pS8bOoPYSuLRVq_RU8" />
+
+  <title>Age Calculator - Free Online Tool</title>
 
   <style>
     body {
@@ -105,6 +109,11 @@
     <button onclick="calcAge()">Calculate Age</button>
 
     <div id="result"></div>
+
+    <!-- AdSense placeholder: paste your code here later -->
+    <!-- <script async src="..."></script>
+    <ins class="adsbygoogle" ...></ins>
+    <script>...</script> -->
 
     <footer>
       Simple • Fast • Free
