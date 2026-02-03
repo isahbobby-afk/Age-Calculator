@@ -1,2 +1,138 @@
-# Age-Calculator
-A simple, fast, and free online Age Calculator. Enter your birth date and instantly find your age in years. Mobile-friendly and easy to use for everyone!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 26px;
+      font-weight: 800;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1.5px solid #ccc;
+      font-size: 16px;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    input[type="date"]:focus {
+      border-color: #667eea;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Age Calculator</h1>
+    <p>Find your exact age in years instantly</p>
+
+    <label for="dob">Select your date of birth</label>
+    <input type="date" id="dob">
+
+    <button onclick="calcAge()">Calculate Age</button>
+
+    <div id="result"></div>
+
+    <footer>
+      Simple • Fast • Free
+    </footer>
+  </div>
+
+  <script>
+    function calcAge() {
+      let dobInput = document.getElementById("dob").value;
+
+      if (!dobInput) {
+        document.getElementById("result").innerHTML = "⚠️ Please select your birth date";
+        return;
+      }
+
+      let dob = new Date(dobInput);
+      let today = new Date();
+
+      let age = today.getFullYear() - dob.getFullYear();
+      let m = today.getMonth() - dob.getMonth();
+
+      if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+        age--;
+      }
+
+      document.getElementById("result").innerHTML = "🎉 Your age is <b>" + age + "</b> years";
+    }
+  </script>
+
+</body>
+</html>
